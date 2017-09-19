@@ -1,3 +1,7 @@
+<?php 
+	require_once(dirname(__FILE__) . '/function.php');
+	$credits = getCredits();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -23,18 +27,13 @@
 							echo "Vous devez saisir un numéro et un mot de passe";
 						}
 
-						else if($_GET['message'] == 'sent')
-						{
-							$credits = $_GET['credits'];
-							echo "Votre message a été envoyé il vous reste $credits crédits";
-						}
-
-
 					}
 				?>
 
 				<div>
+					Nombre de crédits: <?= $credits ?>
 				</div>
+
 				<label>Numéro du destinataire</label>
 				<br>
 				<input type="text" name="destinataire" />
